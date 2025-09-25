@@ -6757,3 +6757,112 @@ text-align: center;
       transform: scale(1.05);
       box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
     }
+	    .qoura-answer {
+      border-radius: 16px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0px 8px 24px rgba(0,0,0,0.15);
+    }
+
+    .modal-header {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #fff;
+    }
+
+    /* Answer Box */
+    .answer-box {
+      background: #ffffff;
+      border: none;
+      padding: 18px;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .answer-box:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+
+    /* User Info */
+    .answer-box .user-info img {
+      border: 2px solid #eee;
+      transition: transform 0.2s ease;
+    }
+    .answer-box .user-info img:hover {
+      transform: scale(1.05);
+    }
+    .answer-box .user-info strong {
+      font-size: 15px;
+      color: #333;
+    }
+    .answer-box .user-info small {
+      font-size: 12px;
+      color: #888;
+    }
+
+    /* Answer Text */
+    .answer-text {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.6;
+    }
+    .answer-text.short-text {
+      display: -webkit-box;
+      -webkit-line-clamp: 3; /* trim text */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Action links */
+    .view-more {
+      font-size: 14px;
+      color: #2575fc;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .view-more:hover {
+      text-decoration: underline;
+    }
+
+    .reply-toggle {
+      font-size: 14px;
+      color: #28a745;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .reply-toggle:hover {
+      text-decoration: underline;
+    }
+
+    /* Reply Input */
+    .reply-input input {
+      font-size: 14px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+    .reply-input button {
+      border-radius: 8px;
+      padding: 4px 14px;
+    }
+
+    /* Footer Input */
+    .modal-footer {
+      background: #fafafa;
+      border-top: 1px solid #eee;
+    }
+    .modal-footer input {
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+    .modal-footer button {
+      border-radius: 10px;
+      padding: 8px 20px;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      border: none;
+    }
+    .modal-footer button:hover {
+      background: linear-gradient(135deg, #5c0dc4, #1d63e6);
+    }

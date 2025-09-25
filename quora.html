@@ -90,8 +90,10 @@
                         </ul>
                         <!-- Topbar Qoute Button Start -->
                         <div class="topbar-qoute-btn">
-                            <a href="log-in.html" data-bs-toggle="modal" data-bs-target="#exampleModal"  class="btn-default active"><span>SIGN UP</span></a>
-                            <a href="sign-up.html" data-bs-toggle="modal" data-bs-target="#exampleModal-2" class="btn-default"><span>LOG IN</span></a>
+                            <a href="sign-up.html" 
+                                class="btn-default active"><span>SIGN UP</span></a>
+                            <a href="login.html" 
+                                class="btn-default"><span>LOG IN</span></a>
                         </div>
                         <!-- Topbar Qoute Button End -->
                     </div>
@@ -158,36 +160,7 @@
 	</header>
 	<!-- Header End -->
 
-    <!-- Start Banner Area -->
-    <!-- <div class="banner-area">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="banner-content">
-                        
-                        <h3>Share & grow the world's <span>knowledge</span>!</h3>
-                        <p>We want to connect with people who will share their knowledge from one person to another.</p>
-                        <a href="ask-questions.html" class="default-btn">
-								Ask Question
-							</a>
-                    </div>
-                </div>
 
-                <div class="col-lg-6 pe-0">
-                    <div class="banner-img">
-                        <img src="assets1/images/banner/banner-img.png" alt="Image">
-                        <img src="assets1/images/banner/shape-1.png" alt="Image" class="shape shape-1">
-                        <img src="assets1/images/banner/shape-2.png" alt="Image" class="shape shape-2">
-                        <img src="assets1/images/banner/shape-3.png" alt="Image" class="shape shape-3">
-                        <img src="assets1/images/banner/shape-4.png" alt="Image" class="shape shape-4">
-                        <img src="assets1/images/banner/shape-5.png" alt="Image" class="shape shape-5">
-                        <img src="assets1/images/banner/shape-6.png" alt="Image" class="shape shape-6">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- End Banner Area -->
 
     <!-- Start Mail Content Area -->
     <div class="main-content-area ptb-100">
@@ -474,10 +447,7 @@
 																50 Vote
 															</a>
                                                     </li>
-                                                    <li>
-                                                        <a href="most-answered.html">
-																2 Answer
-															</a>
+            
                                                     </li>
                                                     <li>
                                                         <a href="most-visited.html">
@@ -518,7 +488,7 @@
                                                     </li>
                                                 </ul>
 
-                                                <a href="queations-details.html" class="default-btn">
+                                                <a href="queations-details.html" class="default-btn" data-bs-toggle="modal" data-bs-target="#qouraModal">
 														Answer
 													</a>
                                             </div>
@@ -636,7 +606,7 @@
                                                     </li>
                                                 </ul>
 
-                                                <a href="queations-details.html" class="default-btn">
+                                                <a href="queations-details.html" class="default-btn" data-bs-toggle="modal" data-bs-target="#qouraModal">
 														Answer
 													</a>
                                             </div>
@@ -754,7 +724,7 @@
                                                     </li>
                                                 </ul>
 
-                                                <a href="queations-details.html" class="default-btn">
+                                                 <a href="queations-details.html" class="default-btn" data-bs-toggle="modal" data-bs-target="#qouraModal">
 														Answer
 													</a>
                                             </div>
@@ -872,7 +842,7 @@
                                                     </li>
                                                 </ul>
 
-                                                <a href="queations-details.html" class="default-btn">
+                                                <a href="queations-details.html" class="default-btn" data-bs-toggle="modal" data-bs-target="#qouraModal">
 														Answer
 													</a>
                                             </div>
@@ -990,7 +960,7 @@
                                                     </li>
                                                 </ul>
 
-                                                <a href="queations-details.html" class="default-btn">
+                                                 <a href="queations-details.html" class="default-btn" data-bs-toggle="modal" data-bs-target="#qouraModal">
 														Answer
 													</a>
                                             </div>
@@ -1109,7 +1079,7 @@
                                                     </li>
                                                 </ul>
 
-                                                <a href="queations-details.html" class="default-btn">
+                                                 <a href="queations-details.html" class="default-btn" data-bs-toggle="modal" data-bs-target="#qouraModal">
 														Answer
 													</a>
                                             </div>
@@ -1227,7 +1197,7 @@
                                                     </li>
                                                 </ul>
 
-                                                <a href="queations-details.html" class="default-btn">
+                                                 <a href="queations-details.html" class="default-btn" data-bs-toggle="modal" data-bs-target="#qouraModal">
 														Answer
 													</a>
                                             </div>
@@ -4269,6 +4239,90 @@
         </div>
     </div>
     <!-- Enad Sign Up Modal -->
+     
+
+
+    <!-- aura answer box  model-->
+     <div class="modal fade" id="qouraModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content qoura-answer">
+      <div class="modal-header">
+        <h5 class="modal-title">All Answers</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- Single Answer -->
+        <div class="answer-box">
+          <!-- User Info -->
+          <div class="d-flex align-items-center mb-3 user-info">
+            <img src="https://i.pravatar.cc/40" class="rounded-circle me-2" width="40" height="40" alt="User">
+            <div>
+              <strong>Rahul Sharma</strong><br>
+              <small>2 hours ago</small>
+            </div>
+          </div>
+
+          <!-- Answer Text -->
+          <p class="answer-text short-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Donec viverra, metus sed tincidunt fermentum, sapien nisi suscipit nulla, 
+            vitae congue lorem velit ut nisl. Pellentesque habitant morbi tristique 
+            senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante 
+            ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae...
+          </p>
+          <a href="javascript:void(0);" class="view-more">View More</a>
+
+          <!-- Reply Section -->
+          <div class="reply-section mt-3">
+            <a href="javascript:void(0);" class="reply-toggle">Reply</a>
+            <div class="reply-input d-none mt-2">
+              <input type="text" class="form-control mb-2" placeholder="Write a reply...">
+              <button class="btn btn-sm btn-success">Submit</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Another Answer -->
+        <div class="answer-box">
+          <div class="d-flex align-items-center mb-3 user-info">
+            <img src="https://i.pravatar.cc/41" class="rounded-circle me-2" width="40" height="40" alt="User">
+            <div>
+              <strong>Anjali Verma</strong><br>
+              <small>Yesterday</small>
+            </div>
+          </div>
+
+          <p class="answer-text short-text">
+            Second answer example text shown here. It will be trimmed 
+            to 60 words and expand when user clicks View More. Lorem ipsum dolor sit amet, 
+            consectetur adipiscing elit. Integer posuere erat a ante. Quisque sit amet 
+            sapien sed nulla volutpat hendrerit. Donec congue tristique nisl eget finibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis aspernatur rem sit cum, laudantium quo. Porro atque sed nobis non!
+          </p>
+          <a href="javascript:void(0);" class="view-more">View More</a>
+
+          <div class="reply-section mt-3">
+            <a href="javascript:void(0);" class="reply-toggle">Reply</a>
+            <div class="reply-input d-none mt-2">
+              <input type="text" class="form-control mb-2" placeholder="Write a reply...">
+              <button class="btn btn-sm btn-success">Submit</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Answer Input -->
+      <div class="modal-footer">
+        <input type="text" class="form-control" placeholder="Write your answer...">
+        <button class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- Quora answer box end -->
+
 
     <!-- Start Go Top Area -->
     <div class="go-top">
@@ -4323,6 +4377,27 @@
      <script src="js/wow.js"></script>
      <!-- Main Custom js file -->
      <script src="js/function.js"></script>
+     <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // View More functionality
+    document.querySelectorAll(".view-more").forEach(btn => {
+      btn.addEventListener("click", function () {
+        let text = this.previousElementSibling;
+        text.classList.toggle("short-text");
+        this.textContent = text.classList.contains("short-text") ? "View More" : "View Less";
+      });
+    });
+
+    // Reply toggle
+    document.querySelectorAll(".reply-toggle").forEach(btn => {
+      btn.addEventListener("click", function () {
+        let replyBox = this.nextElementSibling;
+        replyBox.classList.toggle("d-none");
+      });
+    });
+  });
+</script>
+
  
 </body>
 

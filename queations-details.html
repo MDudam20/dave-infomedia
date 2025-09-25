@@ -90,9 +90,11 @@
                     </ul>
                     <!-- Topbar Qoute Button Start -->
                     <div class="topbar-qoute-btn">
-                        <a href="log-in.html" data-bs-toggle="modal" data-bs-target="#exampleModal"  class="btn-default active"><span>SIGN UP</span></a>
-                        <a href="sign-up.html" data-bs-toggle="modal" data-bs-target="#exampleModal-2" class="btn-default"><span>LOG IN</span></a>
-                    </div>
+                            <a href="sign-up.html" 
+                                class="btn-default active"><span>SIGN UP</span></a>
+                            <a href="login.html" 
+                                class="btn-default"><span>LOG IN</span></a>
+                        </div>
                     <!-- Topbar Qoute Button End -->
                 </div>
                 <!-- Topbar Contact Information End -->
@@ -437,8 +439,8 @@
 														</a>
                                                 </li>
                                                 <li>
-                                                    <a href="most-answered.html">
-															2 Answer
+                                                    <a href="most-answered.html" type="button" class="qura-btn" data-bs-toggle="modal" data-bs-target="#quraAnswerModal">
+															Replay
 														</a>
                                                 </li>
                                                 <li>
@@ -1258,6 +1260,37 @@
         </div>
     </div>
     <!-- Enad Sign Up Modal -->
+
+    <div class="modal fade" id="quraAnswerModal" tabindex="-1" aria-labelledby="quraAnswerLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content qura-answer">
+      
+      <!-- Modal Header -->
+      <!-- <div class="modal-header qura-header">
+        <h5 class="modal-title" id="quraAnswerLabel">💡 Share Your Answer</h5>
+        <button type="button" class="btn-close qura-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div> -->
+      
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <form id="quraAnswerForm">
+          <div class="mb-3">
+            <!-- <label for="quraUserAnswer" class="form-label">Your Answer</label> -->
+            <textarea class="form-control qura-textarea" id="quraUserAnswer" rows="4" placeholder="Type something amazing Answer..." required></textarea>
+          </div>
+        </form>
+      </div>
+      
+      <!-- Modal Footer -->
+      <div class="modal-footer qura-footer">
+        <button type="button" class="qura-cancel" data-bs-dismiss="modal">❌ Cancel</button>
+        <button type="submit" form="quraAnswerForm" class="qura-btn">✅ Submit</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
 
     <!-- Start Go Top Area -->
     <div class="go-top">
