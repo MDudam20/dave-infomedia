@@ -4243,80 +4243,19 @@
 
 
     <!-- aura answer box  model-->
-     <div class="modal fade" id="qouraModal" tabindex="-1">
+    <div class="modal fade" id="qouraModal" tabindex="-1">
   <div class="modal-dialog modal-lg modal-dialog-scrollable">
     <div class="modal-content qoura-answer">
       <div class="modal-header">
-        <h5 class="modal-title">All Answers</h5>
+        <h5 class="modal-title">All Answers (20+)</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>
-
-      <div class="modal-body">
-
-        <!-- Single Answer -->
-        <div class="answer-box">
-          <!-- User Info -->
-          <div class="d-flex align-items-center mb-3 user-info">
-            <img src="https://i.pravatar.cc/40" class="rounded-circle me-2" width="40" height="40" alt="User">
-            <div>
-              <strong>Rahul Sharma</strong><br>
-              <small>2 hours ago</small>
-            </div>
-          </div>
-
-          <!-- Answer Text -->
-          <p class="answer-text short-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Donec viverra, metus sed tincidunt fermentum, sapien nisi suscipit nulla, 
-            vitae congue lorem velit ut nisl. Pellentesque habitant morbi tristique 
-            senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante 
-            ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae...
-          </p>
-          <a href="javascript:void(0);" class="view-more">View More</a>
-
-          <!-- Reply Section -->
-          <div class="reply-section mt-3">
-            <a href="javascript:void(0);" class="reply-toggle">Reply</a>
-            <div class="reply-input d-none mt-2">
-              <input type="text" class="form-control mb-2" placeholder="Write a reply...">
-              <button class="btn btn-sm btn-success">Submit</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Another Answer -->
-        <div class="answer-box">
-          <div class="d-flex align-items-center mb-3 user-info">
-            <img src="https://i.pravatar.cc/41" class="rounded-circle me-2" width="40" height="40" alt="User">
-            <div>
-              <strong>Anjali Verma</strong><br>
-              <small>Yesterday</small>
-            </div>
-          </div>
-
-          <p class="answer-text short-text">
-            Second answer example text shown here. It will be trimmed 
-            to 60 words and expand when user clicks View More. Lorem ipsum dolor sit amet, 
-            consectetur adipiscing elit. Integer posuere erat a ante. Quisque sit amet 
-            sapien sed nulla volutpat hendrerit. Donec congue tristique nisl eget finibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis aspernatur rem sit cum, laudantium quo. Porro atque sed nobis non!
-          </p>
-          <a href="javascript:void(0);" class="view-more">View More</a>
-
-          <div class="reply-section mt-3">
-            <a href="javascript:void(0);" class="reply-toggle">Reply</a>
-            <div class="reply-input d-none mt-2">
-              <input type="text" class="form-control mb-2" placeholder="Write a reply...">
-              <button class="btn btn-sm btn-success">Submit</button>
-            </div>
-          </div>
-        </div>
-
+      <div class="modal-body" id="answers-container">
+        <!-- Answers will be dynamically added here -->
       </div>
-
-      <!-- Bottom Answer Input -->
       <div class="modal-footer">
-        <input type="text" class="form-control" placeholder="Write your answer...">
-        <button class="btn btn-primary">Submit</button>
+        <input type="text" id="new-answer" class="form-control" placeholder="Write your answer...">
+        <button id="submit-answer" class="btn btn-primary">Submit</button>
       </div>
     </div>
   </div>
@@ -4377,25 +4316,104 @@
      <script src="js/wow.js"></script>
      <!-- Main Custom js file -->
      <script src="js/function.js"></script>
-     <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // View More functionality
-    document.querySelectorAll(".view-more").forEach(btn => {
-      btn.addEventListener("click", function () {
-        let text = this.previousElementSibling;
-        text.classList.toggle("short-text");
-        this.textContent = text.classList.contains("short-text") ? "View More" : "View Less";
-      });
+    <script>
+  const answersData = []; // Array to hold all answers
+
+  // Generate 20+ example answers dynamically
+  for (let i = 1; i <= 25; i++) {
+    answersData.push({
+      user: `User ${i}`,
+      time: `${i}h ago`,
+      text: `This is example answer number ${i}. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra, metus sed tincidunt fermentum, sapien nisi suscipit nulla.`,
+      replies: [
+        {user: 'ReplyUser1', time: '1h ago', text: 'Nice point!'},
+        {user: 'ReplyUser2', time: '30m ago', text: 'I agree!'},
+         {user: 'ReplyUser2', time: '30m ago', text: 'I agree!'},
+          {user: 'ReplyUser2', time: '30m ago', text: 'I agree!'},
+           {user: 'ReplyUser2', time: '30m ago', text: 'I agree!'},
+            {user: 'ReplyUser2', time: '30m ago', text: 'I agree!'}
+      ]
+    });
+  }
+
+  function renderAnswers() {
+    const container = document.getElementById('answers-container');
+    container.innerHTML = '';
+    answersData.forEach((ans, index) => {
+      const ansDiv = document.createElement('div');
+      ansDiv.classList.add('answer-box');
+      ansDiv.innerHTML = `
+        <div class="user-info d-flex align-items-center mb-3">
+          <img src="https://i.pravatar.cc/40?img=${index+1}" class="rounded-circle me-2" width="40" height="40">
+          <div><strong>${ans.user}</strong><br><small>${ans.time}</small></div>
+        </div>
+        <p class="answer-text short-text">${ans.text}</p>
+        <a class="view-more">View More</a>
+        <div class="reply-section mt-2">
+          <a class="reply-toggle">Reply</a>
+          <div class="reply-input d-none mt-2">
+            <input type="text" class="form-control mb-2" placeholder="Write a reply...">
+            <button class="btn btn-sm btn-success submit-reply">Submit</button>
+          </div>
+        </div>
+        <div class="replies mt-2">
+          ${ans.replies.map(r=>`<div class="reply"><strong>${r.user}</strong> <small>${r.time}</small><br>${r.text}</div>`).join('')}
+        </div>
+      `;
+      container.appendChild(ansDiv);
+    });
+
+    attachEvents();
+  }
+
+  function attachEvents() {
+    // View More toggle
+    document.querySelectorAll('.view-more').forEach(btn=>{
+      btn.onclick = () => {
+        const text = btn.previousElementSibling;
+        text.classList.toggle('short-text');
+        btn.textContent = text.classList.contains('short-text') ? 'View More' : 'View Less';
+      }
     });
 
     // Reply toggle
-    document.querySelectorAll(".reply-toggle").forEach(btn => {
-      btn.addEventListener("click", function () {
-        let replyBox = this.nextElementSibling;
-        replyBox.classList.toggle("d-none");
-      });
+    document.querySelectorAll('.reply-toggle').forEach(btn=>{
+      btn.onclick = () => {
+        const inputBox = btn.nextElementSibling;
+        inputBox.classList.toggle('d-none');
+      }
     });
-  });
+
+    // Submit reply
+    document.querySelectorAll('.submit-reply').forEach((btn, i)=>{
+      btn.onclick = () => {
+        const input = btn.previousElementSibling;
+        const val = input.value.trim();
+        if(!val) return;
+        const replyDiv = document.createElement('div');
+        replyDiv.classList.add('reply');
+        replyDiv.innerHTML = `<strong>You</strong> <small>Just now</small><br>${val}`;
+        btn.closest('.answer-box').querySelector('.replies').appendChild(replyDiv);
+        input.value = '';
+      }
+    });
+  }
+
+  // Add new answer from footer
+  document.getElementById('submit-answer').onclick = () => {
+    const val = document.getElementById('new-answer').value.trim();
+    if(!val) return;
+    answersData.unshift({
+      user: 'You',
+      time: 'Just now',
+      text: val,
+      replies: []
+    });
+    document.getElementById('new-answer').value = '';
+    renderAnswers();
+  }
+
+  renderAnswers(); // initial render
 </script>
 
  
